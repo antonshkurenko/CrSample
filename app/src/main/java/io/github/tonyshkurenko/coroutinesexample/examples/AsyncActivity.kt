@@ -20,9 +20,7 @@ import android.os.Bundle
 import io.github.tonyshkurenko.coroutinesexample.R
 import io.github.tonyshkurenko.coroutinesexample.SampleCrActivity
 import kotlinx.android.synthetic.main.activity_async.*
-import kotlinx.coroutines.CoroutineStart
-import kotlinx.coroutines.async
-import kotlinx.coroutines.delay
+import kotlinx.coroutines.*
 import timber.log.Timber
 import kotlin.system.measureTimeMillis
 

@@ -39,14 +39,13 @@ class YieldActivity : SampleCrActivity() {
 
                 Timber.d("yield sequence start")
 
-                repeat(10) {
+                repeat(5) {
                     Timber.d("yield sequence $it")
                     yield(it)
-                    suspend { delay(200) }
                 }
 
-                Timber.d("yield sequence 11..15")
-                yieldAll(11..15)
+                Timber.d("yield sequence 6..8")
+                yieldAll(6..8)
             }
 
             scope.launch {
@@ -69,14 +68,13 @@ class YieldActivity : SampleCrActivity() {
 
                 Timber.d("yield iterator start")
 
-                repeat(10) {
+                repeat(5) {
                     Timber.d("yield iterator $it")
                     yield(it)
-                    suspend { delay(200) }
                 }
 
                 Timber.d("yield iterator 11..15")
-                yieldAll(11..15)
+                yieldAll(6..8)
             }
 
 

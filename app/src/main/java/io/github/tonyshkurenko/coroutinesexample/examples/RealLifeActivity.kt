@@ -59,8 +59,8 @@ class RealLifeActivity : SampleCrActivity() {
         }
 
         some_dialog_button.setOnClickListener {
-            presenter.onSomeDiaTimberButtonClick {
-                showDiaTimberWithResult()
+            presenter.onSomeDialogButtonClick {
+                showDialogWithResult()
             }
         }
 
@@ -69,7 +69,7 @@ class RealLifeActivity : SampleCrActivity() {
         }
     }
 
-    private suspend fun showDiaTimberWithResult(): String {
+    private suspend fun showDialogWithResult(): String {
         return suspendCoroutine<String> {
             AlertDialog.Builder(this)
                 .setTitle("Some title")
@@ -103,20 +103,16 @@ class RealLifeActivity : SampleCrActivity() {
 
             val resultString = withContext(Dispatchers.Default) {
                 delay(1000)
-
                 "Some String".also { Timber.d("Loading result string: $it") }
             }
 
             val firstDef = async {
                 delay(500)
-
                 resultString.toLowerCase()
             }
 
             val secondDef = async {
-
                 delay(750)
-
                 resultString.toUpperCase()
             }
 
@@ -151,7 +147,7 @@ class RealLifeActivity : SampleCrActivity() {
             }
         }
 
-        fun onSomeDiaTimberButtonClick(block: suspend () -> String) {
+        fun onSomeDialogButtonClick(block: suspend () -> String) {
 
             scope.launch {
                 val data = try {

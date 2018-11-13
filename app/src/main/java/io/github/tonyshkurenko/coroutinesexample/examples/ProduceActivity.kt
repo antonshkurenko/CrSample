@@ -75,7 +75,7 @@ class ProduceActivity : SampleCrActivity() {
             // kinda simple channel :)
             val recvChan = scope.produce<Int>(capacity = capacity) {
 
-                repeat(20) {
+                repeat(9) {
                     delay(100)
                     Timber.d("Send num $it")
                     if (send) {
@@ -108,7 +108,7 @@ class ProduceActivity : SampleCrActivity() {
             }
 
             val recvChan = scope.broadcast<Int>(capacity = capacity) {
-                repeat(20) {
+                repeat(9) {
                     delay(100)
                     Timber.d("Send num $it")
                     if (send) {
@@ -123,7 +123,7 @@ class ProduceActivity : SampleCrActivity() {
 
             val subscribers = List(3) { workerNumber ->
                 scope.launch {
-                    recvChan.consumeEach {
+                    recvChan.openSubscription().consumeEach {
                         delay((workerNumber + 1) * 100L)
                         Timber.d("Consumed number: $it in subscriber: $workerNumber")
                     }

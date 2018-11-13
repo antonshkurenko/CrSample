@@ -17,7 +17,6 @@ import kotlin.reflect.KClass
  * todo: https://proandroiddev.com/android-coroutine-recipes-33467a4302e9
  *
  * todo: probably use yield to force exceptions and cancel
- * todo: check bytecode to show what it is
  * todo: check memory
  */
 

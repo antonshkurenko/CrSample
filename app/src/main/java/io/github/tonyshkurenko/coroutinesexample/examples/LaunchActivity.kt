@@ -58,16 +58,13 @@ class LaunchActivity : SampleCrActivity() {
             scope.launch {
 
                 val time = measureTimeMillis {
-
                     val first = launch {
-
                         Timber.d("Before delay #1 (join)")
                         delay(3000)
                         Timber.d("After delay #1 (join)")
                     }
 
                     val second = launch {
-
                         Timber.d("Before delay #2 (cancel join)")
                         delay(4500)
                         Timber.d("After delay #2 (cancel join)")

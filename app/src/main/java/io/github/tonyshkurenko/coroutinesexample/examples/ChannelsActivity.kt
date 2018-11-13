@@ -77,7 +77,7 @@ class ChannelsActivity : SampleCrActivity() {
                 val chan = Channel<String>(capacity)
 
                 val sendJob = launch {
-                    repeat(10) {
+                    repeat(5) {
 
                         delay(400)
 
@@ -111,7 +111,7 @@ class ChannelsActivity : SampleCrActivity() {
 
                 val receiveFastJob = launch {
 
-                    repeat(7) {
+                    repeat(4) {
                         Timber.d("Fast reader")
                         delay(200)
 
@@ -128,7 +128,7 @@ class ChannelsActivity : SampleCrActivity() {
 
                 val receiveSlowJob = launch {
 
-                    repeat(7) {
+                    repeat(3) {
                         Timber.d("Slow reader")
                         delay(600)
 
